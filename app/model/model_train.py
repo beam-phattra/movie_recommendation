@@ -8,7 +8,7 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_recommenders as tfrs
 
-from src.model.data_preprocess import DataPreprocess
+from app.model.data_preprocess import DataPreprocess
 
 load_dotenv("configs/.env")
 
