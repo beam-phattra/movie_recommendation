@@ -1,5 +1,7 @@
 import pandas as pd
 
+from sklearn.preprocessing import MultiLabelBinarizer
+
 import tensorflow as tf
 
 
@@ -11,18 +13,15 @@ class DataPreprocess:
         movies_df = pd.read_csv(f"{self.dataset_path}/movies.csv", delimiter=",")
         movies_df["genres"] = movies_df["genres"].str.split("|", n=-1, expand=False)
 
-        # Encoded genres
-        unique_genres = list(
-            set([genre for genres in movies_df["genres"] for genre in genres])
-        )
-        index = tf.keras.layers.StringLookup(vocabulary=unique_genres)
-        encoder = tf.keras.layers.CategoryEncoding(
-            num_tokens=index.vocabulary_size(), output_mode="multi_hot"
-        )
+        # Use the MultiLabelBinarizer to one-hot encode the genres column
+        mlb = MultiLabelBinarizer()
+        genres_encoded = mlb.fit_transform(movies_df["genres"])
 
-        movies_df["genres_encoded"] = movies_df["genres"].apply(
-            lambda x: encoder(index(x))
-        )
+        # Create a new DataFrame with the encoded genres
+        genres_df = pd.DataFrame(genres_encoded, columns=mlb.classes_)
+
+        # Combine the binary values into a single list for each row
+        movies_df["genres_encoded"] = genres_df.apply(lambda row: row.tolist(), axis=1)
         return movies_df
 
     def get_ratings_df(self):
