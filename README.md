@@ -132,11 +132,8 @@ The API will return 4 most recent reviewed movie ids by user.
 
   - Enhanced Model Performances
     - Implement deep learning models like Autoencoders to capture complex user-item interactions.
-    - Use Embedding-based models where user and item embeddings are learned jointly.
     - Use grid search or randomized search for hyperparameter tuning to find the best model parameters.
-    - Consider using Bayesian Optimization for a more efficient hyperparameter search.
 
 - Deployment
   - API:
-    - Use Natural Language Processing (NLP) techniques to analyze movie descriptions and reviews for additional features.
-    - Apply techniques like TF-IDF, Word2Vec, or BERT embeddings to extract meaningful features from text data.
+    - Add case for other response status code (204, 400, 422, etc.)
