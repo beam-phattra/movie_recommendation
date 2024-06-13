@@ -1,6 +1,6 @@
 # Movie Recommendation
 
-API for recommended movies for user using Tensorflow and FastAPI.
+API for recommended movies for user using Tensorflow Recommenders and FastAPI.
 
 ## How does it work
 
@@ -73,7 +73,7 @@ The API will return 2 movies id for user.
 }
 ```
 
-parameter
+parameters
 
 - `user_id=20`
 - `returnMetadata=true`
@@ -130,7 +130,7 @@ The API will return 4 most recent reviewed movie ids by user.
   - Enhanced Feature Engineering:
     - Apply techniques like TF-IDF, Word2Vec, or BERT embeddings to extract meaningful features from movie title and tag.
 
-  - Enhanced Model Performance
+  - Enhanced Model Performances
     - Implement deep learning models like Autoencoders to capture complex user-item interactions.
     - Use Embedding-based models where user and item embeddings are learned jointly.
     - Use grid search or randomized search for hyperparameter tuning to find the best model parameters.
