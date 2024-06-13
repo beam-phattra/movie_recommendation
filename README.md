@@ -6,7 +6,7 @@ API for recommended movies for user using Tensorflow and FastAPI.
 
 ### Getting Started
 
-We use google colab for model development and save model into `models` folder
+Run jupyter notebook in `notebooks/movies_recommendation_model.ipynb` on google colab to get a model and then save the model in to folder `models`
 
 ### Prerequisites
 
@@ -50,11 +50,9 @@ docker build -f Dockerfile -t movie-rec-api .
 docker run -it -p 9070:9070 movie-rec-api
 ```
 
-Open the application in any browser <http://0.0.0.0:9070/>
-
 ## How to feed input and get output
 
-Open your browser and go to <http://0.0.0.0:9070/>
+Open browser and go to <http://0.0.0.0:9070/>
 
 ### GET /recommendations
 
@@ -62,7 +60,7 @@ parameter
 
 - `user_id=20`
 
-Open your browser and go to <http://0.0.0.0:9070/recommendations?user_id=20>
+Open browser and go to <http://0.0.0.0:9070/recommendations?user_id=20>
 
 The API will return 2 movies id for user.
 
@@ -78,11 +76,11 @@ The API will return 2 movies id for user.
 parameter
 
 - `user_id=20`
-- `returnMetadata=True`
+- `returnMetadata=true`
 
-Open your browser and go to <http://0.0.0.0:9070/recommendations?user_id=20&returnMetadata=True>
+Open browser and go to <http://0.0.0.0:9070/recommendations?user_id=20&returnMetadata=true>
 
-The API will return 2 movies id for user with title and genres.
+The API will return 2 movie ids for user with title and genres.
 
 ```json
 {
@@ -114,9 +112,9 @@ parameter
 
 - `user_id=20`
 
-Open your browser and go to  <http://0.0.0.0:9070/features?user_id=20>
+Open browser and go to  <http://0.0.0.0:9070/features?user_id=20>
 
-The API will return 4 most recent reviewed movie id by user.
+The API will return 4 most recent reviewed movie ids by user.
 
 ```json
 {
@@ -128,12 +126,17 @@ The API will return 4 most recent reviewed movie id by user.
 
 ## How to improve in the future
 
-- Enhanced Model Architecture
-  - Implement deep learning models like Autoencoders to capture complex user-item interactions.
-  - Use Embedding-based models where user and item embeddings are learned jointly.
-  - Use grid search or randomized search for hyperparameter tuning to find the best model parameters.
-  - Consider using Bayesian Optimization for a more efficient hyperparameter search.
+- Model
+  - Enhanced Feature Engineering:
+    - Apply techniques like TF-IDF, Word2Vec, or BERT embeddings to extract meaningful features from movie title and tag.
 
-- Enhanced Feature Engineering:
-  - Use Natural Language Processing (NLP) techniques to analyze movie descriptions and reviews for additional features.
-  - Apply techniques like TF-IDF, Word2Vec, or BERT embeddings to extract meaningful features from text data.
+  - Enhanced Model Performance
+    - Implement deep learning models like Autoencoders to capture complex user-item interactions.
+    - Use Embedding-based models where user and item embeddings are learned jointly.
+    - Use grid search or randomized search for hyperparameter tuning to find the best model parameters.
+    - Consider using Bayesian Optimization for a more efficient hyperparameter search.
+
+- Deployment
+  - API:
+    - Use Natural Language Processing (NLP) techniques to analyze movie descriptions and reviews for additional features.
+    - Apply techniques like TF-IDF, Word2Vec, or BERT embeddings to extract meaningful features from text data.
