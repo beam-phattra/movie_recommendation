@@ -66,10 +66,14 @@ The API will return 2 movies id for user.
 
 ```json
 {
-    "items": [
-        {"id": "2081"}, 
-        {"id": "1064"}
-    ]
+  "items": [
+    {
+      "id": "55995"
+    },
+    {
+      "id": "107953"
+    }
+  ]
 }
 ```
 
@@ -84,25 +88,29 @@ The API will return 2 movie ids for user with title and genres.
 
 ```json
 {
-    "items": [
-        {
-            "id": "2081",
-            "title": "Little Mermaid, The (1989)",
-            "genres": ["Animation", "Children", "Comedy", "Musical", "Romance"],
-        },
-        {
-            "id": "1064",
-            "title": "Aladdin and the King of Thieves (1996)",
-            "genres": [
-                "Animation",
-                "Children",
-                "Comedy",
-                "Fantasy",
-                "Musical",
-                "Romance",
-            ],
-        },
-    ]
+  "items": [
+    {
+      "id": "55995",
+      "title": "Beowulf (2007)",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Fantasy",
+        "IMAX"
+      ]
+    },
+    {
+      "id": "107953",
+      "title": "Dragon Ball Z: Battle of Gods (2013)",
+      "genres": [
+        "Action",
+        "Animation",
+        "Fantasy",
+        "IMAX"
+      ]
+    }
+  ]
 }
 ```
 
@@ -118,9 +126,16 @@ The API will return 4 most recent reviewed movie ids by user.
 
 ```json
 {
-    "features":[
-        {"histories":["6333","6345","6358","6365"]}
-    ]
+  "features": [
+    {
+      "histories": [
+        "6333",
+        "6345",
+        "6358",
+        "6365"
+      ]
+    }
+  ]
 }
 ```
 
